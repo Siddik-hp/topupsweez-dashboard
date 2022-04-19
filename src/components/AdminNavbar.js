@@ -7,7 +7,7 @@ import Dropdown from "@material-tailwind/react/Dropdown";
 import DropdownItem from "@material-tailwind/react/DropdownItem";
 import ProfilePicture from "assets/img/profile.jpg";
 
-export default function AdminNavbar({ showSidebar, setShowSidebar }) {
+export default function AdminNavbar({ showSidebar, setShowSidebar, setAdmin }) {
   const location = useLocation().pathname;
 
   return (
@@ -71,7 +71,9 @@ export default function AdminNavbar({ showSidebar, setShowSidebar }) {
                 <NavLink to="/settings">
                   <DropdownItem color="lightBlue">Profile</DropdownItem>
                 </NavLink>
-                <DropdownItem color="lightBlue">Logout</DropdownItem>
+                <DropdownItem color="lightBlue" onClick={() => setAdmin(false)}>
+                  Logout
+                </DropdownItem>
               </Dropdown>
             </div>
           </div>

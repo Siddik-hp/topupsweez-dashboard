@@ -50,7 +50,7 @@ export default function PageVisitsCard() {
             <tbody>
               {Orders.map((e) => {
                 return (
-                  <tr>
+                  <tr key={e.id}>
                     <th className="border-b border-gray-200 align-middle font-light text-sm whitespace-nowrap px-2 py-4 text-left">
                       {e.id}
                     </th>

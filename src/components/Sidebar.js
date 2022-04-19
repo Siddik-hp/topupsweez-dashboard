@@ -3,12 +3,18 @@ import { NavLink } from "react-router-dom";
 import AdminNavbar from "./AdminNavbar";
 import Icon from "@material-tailwind/react/Icon";
 import H6 from "@material-tailwind/react/Heading6";
+import { Dropdown } from "@material-tailwind/react";
+import Image from "@material-tailwind/react/Image";
 
-export default function Sidebar() {
+export default function Sidebar({ setAdmin }) {
   const [showSidebar, setShowSidebar] = useState("-left-64");
   return (
     <>
-      <AdminNavbar showSidebar={showSidebar} setShowSidebar={setShowSidebar} />
+      <AdminNavbar
+        setAdmin={setAdmin}
+        showSidebar={showSidebar}
+        setShowSidebar={setShowSidebar}
+      />
       <div
         className={`h-screen fixed top-0 md:left-0 ${showSidebar} overflow-y-auto flex-row flex-nowrap overflow-hidden shadow-xl bg-white w-64 z-10 py-4 px-6 transition-all duration-300`}
       >
@@ -38,7 +44,7 @@ export default function Sidebar() {
               </li>
               <li className="rounded-lg mb-2 ">
                 <NavLink
-                  to="/tables"
+                  to="/orders"
                   className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
@@ -48,7 +54,7 @@ export default function Sidebar() {
               </li>
               <li className="rounded-lg mb-2">
                 <NavLink
-                  to="/settings"
+                  to="/profile"
                   className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                   activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                 >
@@ -56,7 +62,54 @@ export default function Sidebar() {
                   Profile
                 </NavLink>
               </li>
-
+              {/* ============================= Dropdown ======================= */}
+              <Dropdown placement="bottom-start" buttonText="Post" block={true}>
+                <li className="rounded-lg mb-2 ">
+                  <NavLink
+                    to="/post/freefire-ingame"
+                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    Free Fire ingame
+                  </NavLink>
+                </li>
+                <li className="rounded-lg mb-2">
+                  <NavLink
+                    to="/post/freefire-idcode"
+                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    FreeFire id-code
+                  </NavLink>
+                </li>
+                <li className="rounded-lg mb-2">
+                  <NavLink
+                    to="/post/pubg"
+                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    Pubg Moble
+                  </NavLink>
+                </li>
+                <li className="rounded-lg mb-2">
+                  <NavLink
+                    to="/post/callofduty"
+                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    Call of duty
+                  </NavLink>
+                </li>
+                <li className="rounded-lg mb-2">
+                  <NavLink
+                    to="/post/arenaofvalor"
+                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    Arena of valor
+                  </NavLink>
+                </li>
+              </Dropdown>
               <li className="px-4 rounded-lg mb-2 text-gray-700">
                 <a
                   href="https://demos.creative-tim.com/material-tailwind-kit-react/#/landing"
