@@ -42,7 +42,7 @@ export default function AdminLogin({ setAdmin }) {
         <form
           method="POST"
           onSubmit={AdminFormSumite}
-          className="w-96 p-4 shadow-xl rounded-lg"
+          className="lg:w-1/3 w-2/3 p-4 shadow-xl rounded-lg"
         >
           <h1 className="text-2xl text-center text-white mb-4">Admin Login</h1>
           {err ? (

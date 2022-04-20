@@ -68,7 +68,7 @@ export default function AdminNavbar({ showSidebar, setShowSidebar, setAdmin }) {
                   color: "transparent",
                 }}
               >
-                <NavLink to="/settings">
+                <NavLink to="/profile">
                   <DropdownItem color="lightBlue">Profile</DropdownItem>
                 </NavLink>
                 <DropdownItem color="lightBlue" onClick={() => setAdmin(false)}>

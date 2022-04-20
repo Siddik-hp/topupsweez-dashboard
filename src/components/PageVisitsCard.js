@@ -4,6 +4,7 @@ import CardBody from "@material-tailwind/react/CardBody";
 import Button from "@material-tailwind/react/Button";
 import { useState } from "react";
 import { OrderApi } from "Apis/OrdersApi";
+import { Link } from "react-router-dom";
 
 export default function PageVisitsCard() {
   const [Orders, setOrders] = useState(OrderApi.slice(0, 2));
@@ -79,9 +80,11 @@ export default function PageVisitsCard() {
           </table>
         </div>
       </CardBody>
-      <button className="bg-blue-500 px-4 py-2 rounded-xl shadow-sm text-white">
-        View All
-      </button>
+      <Link to="/orders">
+        <button className="bg-blue-500 px-4 py-2 rounded-xl shadow-sm text-white">
+          View All
+        </button>
+      </Link>
     </Card>
   );
 }

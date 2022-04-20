@@ -4,7 +4,6 @@ import AdminNavbar from "./AdminNavbar";
 import Icon from "@material-tailwind/react/Icon";
 import H6 from "@material-tailwind/react/Heading6";
 import { Dropdown } from "@material-tailwind/react";
-import Image from "@material-tailwind/react/Image";
 
 export default function Sidebar({ setAdmin }) {
   const [showSidebar, setShowSidebar] = useState("-left-64");
@@ -62,51 +61,131 @@ export default function Sidebar({ setAdmin }) {
                   Profile
                 </NavLink>
               </li>
-              {/* ============================= Dropdown ======================= */}
-              <Dropdown placement="bottom-start" buttonText="Post" block={true}>
+              {/* ============================= Free Fire Ingame ======================= */}
+              <Dropdown
+                placement="bottom-start"
+                buttonText="Free fire in game"
+                block={true}
+                className="mb-3"
+              >
                 <li className="rounded-lg mb-2 ">
                   <NavLink
                     to="/post/freefire-ingame"
                     className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                   >
-                    Free Fire ingame
+                    Add Daimond
                   </NavLink>
                 </li>
                 <li className="rounded-lg mb-2">
+                  <NavLink
+                    to="/post/freefire-ingame/lists"
+                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    In game daimond list
+                  </NavLink>
+                </li>
+              </Dropdown>
+              {/* ============================= Free Fire ID code ======================= */}
+
+              <Dropdown
+                placement="bottom-start"
+                buttonText="Free fire ID Code"
+                block={true}
+                className="mb-2"
+              >
+                <li className="rounded-lg mb-2 ">
                   <NavLink
                     to="/post/freefire-idcode"
-                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                   >
-                    FreeFire id-code
+                    Add Daimond
                   </NavLink>
                 </li>
                 <li className="rounded-lg mb-2">
+                  <NavLink
+                    to="/post/freefire-idcode/lists"
+                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    ID code daimond list
+                  </NavLink>
+                </li>
+              </Dropdown>
+              <Dropdown
+                placement="bottom-start"
+                buttonText="Pubg Mobile"
+                block={true}
+                className="mb-2"
+              >
+                <li className="rounded-lg mb-2 ">
                   <NavLink
                     to="/post/pubg"
-                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                   >
-                    Pubg Moble
+                    Add UC
                   </NavLink>
                 </li>
                 <li className="rounded-lg mb-2">
+                  <NavLink
+                    to="/post/pubg/lists"
+                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    UC List
+                  </NavLink>
+                </li>
+              </Dropdown>
+              <Dropdown
+                placement="bottom-start"
+                buttonText="Call of duty"
+                block={true}
+                className="mb-2"
+              >
+                <li className="rounded-lg mb-2 ">
                   <NavLink
                     to="/post/callofduty"
-                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                   >
-                    Call of duty
+                    Add CP
                   </NavLink>
                 </li>
                 <li className="rounded-lg mb-2">
                   <NavLink
-                    to="/post/arenaofvalor"
+                    to="/post/callofduty/lists"
                     className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
                     activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
                   >
-                    Arena of valor
+                    CP List
+                  </NavLink>
+                </li>
+              </Dropdown>
+              <Dropdown
+                placement="bottom-start"
+                buttonText="Arena of valor"
+                block={true}
+                className="mb-2"
+              >
+                <li className="rounded-lg mb-2 ">
+                  <NavLink
+                    to="/post/arenaofvalor"
+                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    Add Voucher
+                  </NavLink>
+                </li>
+                <li className="rounded-lg mb-2">
+                  <NavLink
+                    to="/post/arenaofvalor/lists"
+                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
+                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
+                  >
+                    Voucher List
                   </NavLink>
                 </li>
               </Dropdown>
@@ -117,8 +196,8 @@ export default function Sidebar({ setAdmin }) {
                   rel="noreferrer"
                   className="flex items-center gap-4 text-sm font-light py-3"
                 >
-                  <Icon name="web" size="2xl" />
-                  Visit Your Website
+                  Visit
+                  <img src="/sweez.png" alt="sweez" width={100} />
                 </a>
               </li>
             </ul>
