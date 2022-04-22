@@ -14,3 +14,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 @import "@material-tailwind/react/tailwind.css";
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

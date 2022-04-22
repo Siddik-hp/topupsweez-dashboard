@@ -4,8 +4,11 @@ import AdminNavbar from "./AdminNavbar";
 import Icon from "@material-tailwind/react/Icon";
 import H6 from "@material-tailwind/react/Heading6";
 import { Dropdown } from "@material-tailwind/react";
+import SingleNav from "./SingleNavILInk/SingleNav";
+import { NavLinkApi } from "./SingleNavILInk/NavlinkApi";
 
 export default function Sidebar({ setAdmin }) {
+  const [NavItem, setNavItem] = useState(NavLinkApi);
   const [showSidebar, setShowSidebar] = useState("-left-64");
   return (
     <>
@@ -61,134 +64,10 @@ export default function Sidebar({ setAdmin }) {
                   Profile
                 </NavLink>
               </li>
-              {/* ============================= Free Fire Ingame ======================= */}
-              <Dropdown
-                placement="bottom-start"
-                buttonText="Free fire in game"
-                block={true}
-                className="mb-3"
-              >
-                <li className="rounded-lg mb-2 ">
-                  <NavLink
-                    to="/post/freefire-ingame"
-                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    Add Daimond
-                  </NavLink>
-                </li>
-                <li className="rounded-lg mb-2">
-                  <NavLink
-                    to="/post/freefire-ingame/lists"
-                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    In game daimond list
-                  </NavLink>
-                </li>
-              </Dropdown>
-              {/* ============================= Free Fire ID code ======================= */}
+              {NavItem.map((data) => {
+                return <SingleNav key={data.id} data={data} />;
+              })}
 
-              <Dropdown
-                placement="bottom-start"
-                buttonText="Free fire ID Code"
-                block={true}
-                className="mb-2"
-              >
-                <li className="rounded-lg mb-2 ">
-                  <NavLink
-                    to="/post/freefire-idcode"
-                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    Add Daimond
-                  </NavLink>
-                </li>
-                <li className="rounded-lg mb-2">
-                  <NavLink
-                    to="/post/freefire-idcode/lists"
-                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    ID code daimond list
-                  </NavLink>
-                </li>
-              </Dropdown>
-              <Dropdown
-                placement="bottom-start"
-                buttonText="Pubg Mobile"
-                block={true}
-                className="mb-2"
-              >
-                <li className="rounded-lg mb-2 ">
-                  <NavLink
-                    to="/post/pubg"
-                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    Add UC
-                  </NavLink>
-                </li>
-                <li className="rounded-lg mb-2">
-                  <NavLink
-                    to="/post/pubg/lists"
-                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    UC List
-                  </NavLink>
-                </li>
-              </Dropdown>
-              <Dropdown
-                placement="bottom-start"
-                buttonText="Call of duty"
-                block={true}
-                className="mb-2"
-              >
-                <li className="rounded-lg mb-2 ">
-                  <NavLink
-                    to="/post/callofduty"
-                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    Add CP
-                  </NavLink>
-                </li>
-                <li className="rounded-lg mb-2">
-                  <NavLink
-                    to="/post/callofduty/lists"
-                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    CP List
-                  </NavLink>
-                </li>
-              </Dropdown>
-              <Dropdown
-                placement="bottom-start"
-                buttonText="Arena of valor"
-                block={true}
-                className="mb-2"
-              >
-                <li className="rounded-lg mb-2 ">
-                  <NavLink
-                    to="/post/arenaofvalor"
-                    className=" flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    Add Voucher
-                  </NavLink>
-                </li>
-                <li className="rounded-lg mb-2">
-                  <NavLink
-                    to="/post/arenaofvalor/lists"
-                    className="flex items-center gap-4 text-sm text-gray-700 font-light px-4 py-3 rounded-lg"
-                    activeClassName="bg-gradient-to-tr from-light-blue-500 to-light-blue-700 text-white shadow-md"
-                  >
-                    Voucher List
-                  </NavLink>
-                </li>
-              </Dropdown>
               <li className="px-4 rounded-lg mb-2 text-gray-700">
                 <a
                   href="https://demos.creative-tim.com/material-tailwind-kit-react/#/landing"

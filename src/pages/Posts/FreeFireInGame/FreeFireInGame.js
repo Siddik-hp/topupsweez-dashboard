@@ -1,28 +1,17 @@
 import React, { useState } from "react";
 
 const FreeFireInGame = () => {
-  const [err, setErr] = useState(false);
-  const [errMsg, setErrMsg] = useState("");
   return (
     <div className="w-full h-screen items-center flex ">
-      {" "}
       <form
         method="POST"
         // onSubmit={InGameSubmit}
         className="lg:w-1/3 w-2/3 p-4 shadow-xl rounded-lg mx-auto"
       >
-        {err ? (
-          <h3 className="bg-red-500 px-2 py-1 text-center mb-4 rounded-lg text-white shadow-lg">
-            {errMsg}
-          </h3>
-        ) : (
-          ""
-        )}
         <div className=" flex flex-col mb-6 -mt-20">
           <input
             type="number"
             name="daimond"
-            id="Daimond"
             placeholder="Daimond"
             autoComplete="off"
             className="p-2 rounded-lg outline-none"
@@ -32,7 +21,6 @@ const FreeFireInGame = () => {
           <input
             type="number"
             name="offer"
-            id="Offfer"
             placeholder="Offer"
             autoComplete="off"
             className="p-2 rounded-lg outline-none"
@@ -42,7 +30,6 @@ const FreeFireInGame = () => {
           <input
             type="number"
             name="price"
-            id="Price"
             placeholder="Price"
             autoComplete="off"
             className="p-2 rounded-lg outline-none"
